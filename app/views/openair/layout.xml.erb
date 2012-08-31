@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request API_version="1.0" client="<%= OPEN_AIR['client'] %>" client_ver="1.1" namespace="default" key="<%= OPEN_AIR['key'] %>">
+  <Auth>
+    <Login>
+      <company><%= auth[:company] %></company>
+      <user><%= auth[:user] %></user>
+      <password><%= auth[:password] %></password>
+    </Login>
+  </Auth>
+  <%= yield %>
+</request>

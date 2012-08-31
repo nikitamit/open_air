@@ -1,0 +1,9 @@
+<div ng-controller="OpenAir.Controllers.Timesheets">
+  <h2>Timesheets</h2>
+
+  <ul>
+    <li ng-repeat="timesheet in timesheets">
+      {{humanStatus(timesheet)}} for {{timesheet.total}} hours
+    </li>
+  </ul>
+</div>
