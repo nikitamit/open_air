@@ -1,7 +1,7 @@
 OpenAir.module.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.
     when('/timesheets', {templateUrl: '<%= asset_path('timesheets/index.html') %>'}).
-    when('/foo', {templateUrl: '<%= asset_path('timesheets/index.html') %>'}).
+    when('/timecards', {templateUrl: '<%= asset_path('timecards/index.html') %>'}).
     otherwise({redirectTo: '/timesheets'});
 
 //  $locationProvider.html5Mode(true);

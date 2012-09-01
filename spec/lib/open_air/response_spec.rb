@@ -16,7 +16,7 @@ describe OpenAir::Response do
 
     context 'when the request was a success' do
       it { should be_a OpenAir::Response }
-      its(:response_for_type) { should == {'status' => '0', 'Foo' => {'Bar' => 'Baz'}} }
+      its(:response_for_type) { should == {'@status' => '0', 'Foo' => {'Bar' => 'Baz'}} }
     end
 
     context 'when the request was a failure' do

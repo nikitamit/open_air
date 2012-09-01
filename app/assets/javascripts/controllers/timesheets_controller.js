@@ -1,7 +1,7 @@
 OpenAir.Controllers.Timesheets = function($scope, Timesheet) {
   var humanStatus = {
-    R: 'Rejected',
-    A: 'Accepted'
+    R: 'rejected',
+    A: 'accepted'
   };
 
   $scope.timesheets = Timesheet.query();

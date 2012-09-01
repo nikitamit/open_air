@@ -14,6 +14,7 @@
 //= require_self
 //= require_tree .
 //= require_tree ./services
+//= require_tree ./filters
 //= require_tree ./controllers
 
 var OpenAir = {};

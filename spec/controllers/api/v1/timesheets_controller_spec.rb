@@ -10,7 +10,7 @@ describe Api::V1::TimesheetsController do
 
     context 'when logged in' do
       before do
-        OpenAir::Request.stub(:request).and_return { {foo: :bar} }
+        OpenAir::Request.stub(:request).and_return { {'Timesheet' => {foo: :bar}} }
         sign_in user
       end
 

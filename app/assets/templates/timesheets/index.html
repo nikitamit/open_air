@@ -3,7 +3,7 @@
 
   <ul>
     <li ng-repeat="timesheet in timesheets">
-      {{humanStatus(timesheet)}} for {{timesheet.total}} hours
+      {{humanStatus(timesheet) | capitalize}} for {{timesheet.total}} hours
     </li>
   </ul>
 </div>

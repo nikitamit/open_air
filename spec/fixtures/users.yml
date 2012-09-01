@@ -2,4 +2,4 @@ manager:
   company: Pivotal Labs Inc
   email: a@b.com
   encrypted_password: password
-  username: John Smith
+  username: john smith
