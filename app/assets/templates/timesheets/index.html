@@ -21,8 +21,7 @@
           {{timesheet.name}} ({{humanStatus(timesheet) | capitalize}} for {{timesheet.total}} hours on: {{timesheet.created | openAirDate | date}})
         </summary>
 
-        {{timesheet | json}}
-
+        <div ng-include src="'assets/timesheets/show.html'" />
         <div ng-include src="timesheet.timecardUrl" oninclude="onInclude(timesheet.id)" />
       </details>
     </li>
