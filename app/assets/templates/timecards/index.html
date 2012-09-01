@@ -1,9 +1,12 @@
 <div ng-controller="OpenAir.Controllers.Timecards">
-  <h2>Timecards</h2>
+  <h3>Timecards</h3>
 
   <ul>
-    <li ng-repeat="timesheet in timecards">
-      {{timesheet}}
+    <li ng-repeat="timecard in timecards">
+      <details>
+        <summary>{{timecard.name}}</summary>
+        {{timecard}}
+      </details>
     </li>
   </ul>
 </div>
