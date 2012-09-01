@@ -7,7 +7,7 @@ module OpenAir
       #  include ApplicationHelper
       #end
 
-      view.render(file: "openair/#{template_path}", formats: :xml, locals: params, layout: 'openair/layout')
+      view.render(file: "open_air/#{template_path}", formats: :xml, locals: params, layout: 'open_air/layout')
     end
 
     def request(type, context={})

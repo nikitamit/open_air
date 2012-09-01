@@ -1,4 +1,4 @@
-Openair::Application.routes.draw do
+OpenAir::Application.routes.draw do
   root to: 'home#show'
   devise_for :users
 

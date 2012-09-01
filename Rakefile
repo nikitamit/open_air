@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Openair::Application.load_tasks
+OpenAir::Application.load_tasks
