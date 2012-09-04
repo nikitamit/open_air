@@ -1,17 +1,20 @@
 development:
   host: www.openair.com
   path: /api.pl
+  namespace: foobar
   client: foobar
   key: barbaz
 
 test:
   host: www.openair.com
   path: /api.pl
+  namespace: foobar
   client: foobar
   key: barbaz
 
 production:
   host: www.openair.com
   path: /api.pl
+  namespace: foobar
   client: foobar
   key: barbaz

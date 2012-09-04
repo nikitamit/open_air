@@ -1,28 +1,28 @@
 <div ng-controller="OpenAir.Controllers.Timesheets">
   <h2>Timesheets</h2>
 
-  <form>
-    By Status:
+  <form class="form-inline">
+    <label>By Name:</label>
+    <input ng-model="timesheetFilter.name" type="text" class="search-query" placeholder="name"/>
+
+    <label>By Status:</label>
     <select ng-model="timesheetFilter.status">
       <option value="">-- Any Status --</option>
-      <option value="A">Accepted</option>
-      <option value="R">Rejected</option>
-      <option value="S">Submitted</option>
+      <option ng-repeat="(key, value) in statues" value="{{key}}">
+        {{value | capitalize}}
+      </ng-repeat>
     </select>
-
-    By Name:
-    <input ng-model="timesheetFilter.name"/>
   </form>
 
   <ul>
     <li ng-repeat="timesheet in timesheets | filter:timesheetFilter">
       <details>
         <summary ng-click="toggleTimecard(timesheet)">
-          {{timesheet.name}} ({{humanStatus(timesheet) | capitalize}} for {{timesheet.total}} hours on: {{timesheet.created | openAirDate | date}})
+          {{timesheet.name}} ({{humanStatus(timesheet) | capitalize}} for {{timesheet.total}} hours on: {{timesheet.created | openAirDate}})
         </summary>
 
         <div ng-include src="'assets/timesheets/show.html'" />
-        <div ng-include src="timesheet.timecardUrl" oninclude="onInclude(timesheet.id)" />
+        <div ng-include src="timesheet.timecardUrl"/>
       </details>
     </li>
   </ul>

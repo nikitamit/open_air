@@ -21,8 +21,11 @@ describe("OpenAir.Controllers", function () {
 
     describe("$scope.humanStatus", function () {
       it("gets the human readable status", function () {
+        expect(scope.humanStatus({status: 'O'})).toEqual('open');
+        expect(scope.humanStatus({status: 'S'})).toEqual('submitted');
+        expect(scope.humanStatus({status: 'A'})).toEqual('approved');
         expect(scope.humanStatus({status: 'R'})).toEqual('rejected');
-        expect(scope.humanStatus({status: 'A'})).toEqual('accepted');
+        expect(scope.humanStatus({status: 'X'})).toEqual('archived');
       });
     });
 
