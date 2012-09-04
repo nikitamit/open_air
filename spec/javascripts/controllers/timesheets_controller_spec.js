@@ -25,6 +25,16 @@ describe("OpenAir.Controllers", function () {
         expect(scope.humanStatus({status: 'A'})).toEqual('accepted');
       });
     });
+
+    describe("toggleTimecard", function () {
+      it("should toggle the timecardUrl", function () {
+        var timesheet = {};
+        scope.toggleTimecard(timesheet);
+        expect(timesheet.timecardUrl).toEqual('/assets/timecards/index.html');
+        scope.toggleTimecard(timesheet);
+        expect(timesheet.timecardUrl).toBeNull();
+      });
+    });
   });
 });
 

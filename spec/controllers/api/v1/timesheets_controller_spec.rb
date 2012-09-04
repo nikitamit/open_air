@@ -19,17 +19,8 @@ describe Api::V1::TimesheetsController do
       its(:content_type) { should == Mime::JSON }
 
       it 'makes the correct OpenAir request' do
-        OpenAir::Request.should_receive(:request).with(:read, auth: user.open_air_auth, type: 'Timesheet', method: 'all')
+        OpenAir::Request.should_receive(:request).with(:timesheet, auth: user.open_air_auth)
         subject
-      end
-
-      context 'when a method is provided' do
-        subject {get :index, format: :json, method: 'foobar' }
-
-        it 'makes the correct OpenAir request' do
-          OpenAir::Request.should_receive(:request).with(:read, auth: user.open_air_auth, type: 'Timesheet', method: 'foobar')
-          subject
-        end
       end
     end
   end

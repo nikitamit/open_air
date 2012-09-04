@@ -4,10 +4,10 @@ describe OpenAir::Request do
   let(:request) { OpenAir::Request.new }
   let(:url) { ['https://', OPEN_AIR['host'], ':80', OPEN_AIR['path']].join('') }
   let(:user) { users(:manager) }
-  let(:params) { {auth: user.open_air_auth, method: 'all', type: 'Timesheet'} }
+  let(:params) { {auth: user.open_air_auth} }
 
   describe '#request_xml' do
-    subject { request.request_xml(:read, params) }
+    subject { request.request_xml(:timesheet, params) }
 
     it { should include('Auth') }
     it { should include(OPEN_AIR['key']) }
@@ -18,7 +18,7 @@ describe OpenAir::Request do
   end
 
   describe '#request' do
-    subject { request.request(:read, params) }
+    subject { request.request(:timesheet, params) }
 
     context 'when the request was a success' do
       before do
@@ -29,13 +29,13 @@ describe OpenAir::Request do
       it { should == 'bar' }
 
       it 'should create the correct response object' do
-        OpenAir::Response.should_receive(:new).with(kind_of(Net::HTTPResponse), :read)
+        OpenAir::Response.should_receive(:new).with(kind_of(Net::HTTPResponse), :timesheet)
         subject
       end
 
       it 'should make the correct request' do
         subject
-        assert_requested :post, url, body: request.request_xml(:read, params)
+        assert_requested :post, url, body: request.request_xml(:timesheet, params)
       end
     end
   end

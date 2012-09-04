@@ -1,14 +1,13 @@
 OpenAir.Controllers.Timesheets = function($scope, Timesheet) {
   $scope.timesheets = Timesheet.query();
 
-  $scope.statues = {
-    R: 'rejected',
-    A: 'accepted',
-    S: 'submitted'
-  };
-
   $scope.humanStatus = function(timesheet) {
-    return $scope.statues[timesheet.status];
+    var statues = {
+      R: 'rejected',
+      A: 'accepted',
+      S: 'submitted'
+    };
+    return statues[timesheet.status];
   };
 
   $scope.toggleTimecard = function(timesheet) {

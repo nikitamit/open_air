@@ -1,7 +1,5 @@
 OpenAir.Controllers.Timecards = function($scope, Timecard) {
-  $scope.onInclude = function(timesheetId) {
-    $scope.timecards = Timecard.query({timesheet_id: timesheetId});
-  };
+  $scope.timecards = Timecard.query({timesheetId: $scope.timesheet.id});
 };
 
 OpenAir.Controllers.Timecards.$inject = ['$scope', 'Timecard'];
